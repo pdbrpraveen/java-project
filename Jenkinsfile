@@ -16,7 +16,7 @@ pipeline {
 }
 stage ('deploy'){
 steps{
-sleep 10
+sleep 30
 sh"cp /dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
 }
 }
