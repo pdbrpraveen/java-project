@@ -16,8 +16,8 @@ pipeline {
 }
 stage ('deploy'){
 steps{
-sleep 30
-sh"cp /dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
+#sleep 30
+sh" cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
 }
 }
 }
