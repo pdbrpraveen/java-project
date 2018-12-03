@@ -38,7 +38,7 @@ agent {
 label 'Linux'
 }
 steps {
-sh "wget http://ec2-54-84-88-150.compute-1.amazonaws.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
+sh "wget http://ec2-18-234-114-183.compute-1.amazonaws.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
 sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
 }
@@ -47,7 +47,7 @@ stage("Test on Debian") {
         docker 'openjdk:8u121-jre'
       }
       steps {
-        sh "wget http://ec2-54-84-88-150.compute-1.amazonaws.com/rectangles/all/rectangle.${env.BUILD_NUMBER}.jar"
+        sh "wget http://ec2-18-234-114-183.compute-1.amazonaws.com/rectangles/all/rectangle.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 }
 }
