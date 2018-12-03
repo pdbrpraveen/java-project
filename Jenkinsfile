@@ -19,7 +19,7 @@ pipeline {
 }
 }
 stage ('deploy'){
-Agent {
+agent {
 label 'apache'
 }
 steps{
