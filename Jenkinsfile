@@ -50,6 +50,8 @@ stage("Test on Debian") {
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 }
 }
+}
+}
 
 
 
