@@ -6,7 +6,7 @@ pipeline {
    agent {
    label 'apache'
    }
-   steps{
+   steps {
    sh 'ant -f test.xml -v'
    junit 'reports/result.xml'
 }
@@ -14,16 +14,17 @@ pipeline {
    stage ( 'build') {
    agent {
    label 'apache'
+}
     steps{
       sh 'ant -f build.xml -v'
+}
 }
 post {
 success {
 archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
 }
 }
-}
-stage ('deploy'){
+stage ('deploy') {
 agent {
 label 'apache'
 }
@@ -32,8 +33,8 @@ sh" cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.
 }
 }
 
-stage ("Running on Linux"){
-agent{
+stage ("Running on Linux") {
+agent {
 label 'Linux'
 }
 steps {
@@ -51,8 +52,7 @@ stage("Test on Debian") {
 }
 }
 }
-}
-}
+
 
 
 
