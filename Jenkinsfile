@@ -17,6 +17,11 @@ pipeline {
     steps{
       sh 'ant -f build.xml -v'
 }
+post {
+success {
+archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+}
+}
 }
 stage ('deploy'){
 agent {
@@ -43,11 +48,8 @@ stage("Test on Debian") {
       steps {
         sh "wget http://ec2-54-84-88-150.compute-1.amazonaws.com/rectangles/all/rectangle.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
-post {
-always {
-archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
 }
 }
-}
+
 
 
