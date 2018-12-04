@@ -38,6 +38,7 @@ agent {
 label 'Linux'
 }
 steps {
+chown 755 /var/www/html/rectangles/all
 sh "wget http://ec2-18-234-114-183.compute-1.amazonaws.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
 sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
