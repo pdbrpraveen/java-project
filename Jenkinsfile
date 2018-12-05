@@ -29,7 +29,7 @@ agent {
 label 'apache'
 }
 steps{
-sh" cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
+sh" cp /root/.jenkins/workspace/javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
 }
 }
 
