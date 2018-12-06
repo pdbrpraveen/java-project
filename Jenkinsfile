@@ -35,7 +35,7 @@ sh" cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.
 
 stage ("Running on Linux") {
 agent {
-label 'Linux'
+label 'apache'
 }
 steps {
 chown 755 /var/www/html/rectangles/all
