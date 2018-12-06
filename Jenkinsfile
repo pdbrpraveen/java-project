@@ -4,7 +4,7 @@ pipeline {
   environment {
     MAJOR_VERSION = 1
   }
-
+ stages {
     stage('Unit Tests') {
       agent {
         label 'apache'
