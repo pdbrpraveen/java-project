@@ -45,7 +45,7 @@ sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
 stage("Test on Linux") {
       agent {
-        docker 'openjdk:8u191-jre'
+        docker 'openjdk:8u121-jre'
       }
       steps {
         sh "wget http://ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/rectangle.${env.BUILD_NUMBER}.jar"
