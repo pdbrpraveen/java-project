@@ -30,6 +30,7 @@ label 'apache'
 }
 steps{
 sh "cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
+sh "chmod 755 * /var/www/html/rectangles/all"
 }
 }
 
@@ -38,7 +39,6 @@ agent {
 label 'apache'
 }
 steps {
-sh "chmod 755 * /var/www/html/rectangles/all"
 sh "wget http://ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
 sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
