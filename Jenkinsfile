@@ -43,7 +43,7 @@ sh "wget http://ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/rectang
 sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
 }
-stage("Test on Linux") {
+stage("Test on Docker") {
       agent {
         docker 'openjdk:8u121-jre'
       }
