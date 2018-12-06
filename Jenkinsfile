@@ -30,7 +30,8 @@ label 'apache'
 }
 steps{
 sh "cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
-sh "chmod 755 * /var/www/html/rectangles/all"
+sh "cd  /var/www/html/rectangles/all"
+sh "chmod 755 rectangle_${env.BUILD_NUMBER}.jar"
 }
 }
 
