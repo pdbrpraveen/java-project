@@ -29,8 +29,8 @@ agent {
 label 'apache'
 }
 steps{
-sh "chmod 755 rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all"
 sh "cp /var/lib/jenkins/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
+sh "chmod 755 rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all"
 }
 }
 
