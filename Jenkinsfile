@@ -29,8 +29,8 @@ agent {
 label 'apache'
 }
 steps{
+sh"sudo su 
 sh "cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
-sleep 15
 sh "chmod 755 rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all"
 }
 }
@@ -46,7 +46,7 @@ sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
 stage("Test on Linux") {
       agent {
-        docker 'openjdk:8u121-jre'
+        docker 'openjdk:8u191-jre'
       }
       steps {
         sh "wget http://ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/rectangle.${env.BUILD_NUMBER}.jar"
