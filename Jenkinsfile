@@ -30,6 +30,7 @@ label 'apache'
 }
 steps{
 sh "cp /root/.jenkins/workspace/Javapipeline/dist/rectangle_${env.BUILD_NUMBER}.jar  /var/www/html/rectangles/all"
+sleep 15
 sh "chmod 755 rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all"
 }
 }
