@@ -94,18 +94,15 @@ stage("Test on Docker") {
       }
     }
     stage("Test on Docker") {
->>>>>>> development
       agent {
         docker 'openjdk:8u121-jre'
       }
       steps {
-<<<<<<< HEAD
         sh "wget http://ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 }
 }
 }
-=======
         sh "wget ec2-34-201-59-234.compute-1.amazonaws.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }
