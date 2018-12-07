@@ -1,5 +1,5 @@
 pipeline {
-<<<<<<< HEAD
+
   agent  none
    
   stages {
@@ -45,7 +45,7 @@ sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 5 4"
 }
 }
 stage("Test on Docker") {
-=======
+
   agent none
 
   environment {
@@ -166,5 +166,4 @@ stage("Test on Docker") {
       )
     }
   }
->>>>>>> development
 }
