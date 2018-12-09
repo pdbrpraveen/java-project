@@ -43,7 +43,7 @@ pipeline {
       steps {
 sh "if [ -f '/var/www/html/rectangles/all/development/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar' ];then
 chmod 755 /var/www/html/rectangles/all/development/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar
-else if [ -f '/var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar' ];then
+elif [ -f '/var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar' ];then
 chmod 755 /var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar;
 fi"
 
