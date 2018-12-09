@@ -41,9 +41,9 @@ pipeline {
         label 'Linux'
       }
       steps {
-      sh "if [ '/var/www/html/rectangles/all/development/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar '];
+      sh "if [ '/var/www/html/rectangles/all/development/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar'];
 then chmod 755 /var/www/html/rectangles/all/development/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar;
-elif [ '/var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar '];
+elif [ '/var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar'];
 then chmod 755 /var/www/html/rectangles/all/master/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar;
 fi"
 
